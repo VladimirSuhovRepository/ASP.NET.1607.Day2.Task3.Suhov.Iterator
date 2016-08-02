@@ -16,27 +16,48 @@ namespace ASP.NET._1607.Day2.Task3.Suhov.Iterator
         private int _tail;       // Last valid element in the queue
         private int _size;
         #endregion
-        public int Count { get { return _container.Length; } }
-        public T this[int index]
-        {
-            get { return _container[index]; }
-            set { _container[index] = value; }
-        }
+        /// <summary>
+        /// Default constructor without parameters
+        /// </summary>
+        public CustomQueue() { }
+        /// <summary>
+        /// Constructor with parameter array
+        /// </summary>
         public CustomQueue(T[] array)
         {
             _container = new T[array.Length];
             for (int i = 0; i < array.Length; i++)
                 Enqueue(array[i]);
         }
-        public CustomQueue() { }
+        /// <summary>
+        /// Returns the number of elements in queue
+        /// </summary>
+        public int Count { get { return _container.Length; } }
+        /// <summary>
+        /// Indexer to go throw queue
+        /// </summary>
+        public T this[int index]
+        {
+            get { return _container[index]; }
+            set { _container[index] = value; }
+        }
+        /// <summary>
+        /// Iterator returns the instance of iterator class
+        /// </summary>
         public CustomQueueIterator<T> Iterator()
         {
             return new CustomQueueIterator<T>(this);
         }
+        /// <summary>
+        /// Enumerator returns the instance of iterator class
+        /// </summary>
         public CustomQueueIterator<T> GetEnumerator()
         {
             return new CustomQueueIterator<T>(this);
         }
+        /// <summary>
+        /// Adds item to the tail of the queue
+        /// </summary>
         public void Enqueue(T item)
         {
             if (_size == _container.Length)
@@ -48,6 +69,9 @@ namespace ASP.NET._1607.Day2.Task3.Suhov.Iterator
             _tail = (_tail + 1) % _container.Length;
             _size++;
         }
+        /// <summary>
+        /// Removes the object at the head of the queue and returns it
+        /// </summary>
         public T Dequeue()
         {
             if (_size == 0)
@@ -59,6 +83,9 @@ namespace ASP.NET._1607.Day2.Task3.Suhov.Iterator
             _size--;
             return removed;
         }
+        /// <summary>
+        /// Returns the object at the head of the queue
+        /// </summary
         public T Peek()
         {
             if (_size == 0)
