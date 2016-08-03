@@ -85,7 +85,7 @@ namespace ASP.NET._1607.Day2.Task3.Suhov.Iterator
         }
         /// <summary>
         /// Returns the object at the head of the queue
-        /// </summary
+        /// </summary>
         public T Peek()
         {
             if (_size == 0)
@@ -124,11 +124,11 @@ namespace ASP.NET._1607.Day2.Task3.Suhov.Iterator
             #endregion
             /// <summary>
             /// Default constructor without parameters
-            /// </summary
+            /// </summary>
             public CustomQueueIterator() { }
             /// <summary>
             /// Constructor with parameter
-            /// </summary
+            /// </summary>
             public CustomQueueIterator(CustomQueue<T> collection)
             {
                 _currentIndex = -1;
