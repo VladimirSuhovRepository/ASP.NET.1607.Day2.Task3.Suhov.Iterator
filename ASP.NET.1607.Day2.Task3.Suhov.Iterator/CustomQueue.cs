@@ -136,7 +136,7 @@ namespace ASP.NET._1607.Day2.Task3.Suhov.Iterator
             }
             /// <summary>
             /// Returns the current item from collection
-            /// </summary
+            /// </summary>
             public T Current
             {
                 get
@@ -148,14 +148,14 @@ namespace ASP.NET._1607.Day2.Task3.Suhov.Iterator
             }
             /// <summary>
             /// Set the index to default value
-            /// </summary
+            /// </summary>
             public void Reset()
             {
                 _currentIndex = -1;
             }
             /// <summary>
             /// Return true if there are more items to iterate
-            /// </summary
+            /// </summary>
             public bool MoveNext()
             {
                 return ++_currentIndex < _collection.Count;
